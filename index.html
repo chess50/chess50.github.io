@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board Analyzer</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Chess Board Analyzer</h1>
+        <div id="fen-input">
+            <label for="fen">Enter FEN string:</label>
+            <input type="text" id="fen" name="fen">
+            <button onclick="submitFen()">Submit</button>
+        </div>
+        <div id="chessboard">Chess Board to be Parsed</div>
+        <div id="statistics">Statistics</div>
+        <div id="evaluation">Evaluation</div>
+    </div>
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
