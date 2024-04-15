@@ -3,10 +3,10 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #314755, #26a0da);
-    
 }
 
 #container {
+    width: 90%; /* Adjust the width as needed */
     max-width: 800px;
     margin: 50px auto;
     text-align: center;
@@ -15,7 +15,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     animation: scaleUp 1s ease forwards;
-    animation: pulse 1s ease forwards;
+}
+
+/* Add media queries for smaller screen sizes */
+@media (max-width: 768px) {
+    #container {
+        width: 95%; /* Adjust the width as needed for smaller screens */
+    }
 }
 
 h1 {
@@ -51,6 +57,7 @@ h1 {
         transform: scale(1);
     }
 }
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -100,5 +107,12 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Add overflow property */
+}
 
+#chessboard pre,
+#statistics pre,
+#evaluation pre {
+    margin: 0; /* Remove default margin */
+    white-space: pre-wrap; /* Allow wrapping within pre tag */
 }
