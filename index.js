@@ -166,10 +166,10 @@ function evaluate() {
     b_score += b_rook * 5;
     b_score += b_queen * 9;
     
-    var w_s_p = w_score / 39;
-    var b_s_p = b_score / 39;
-    if (w_s_p > 1) w_s_p = 1;
-    if (b_s_p > 1) b_s_p = 1;
+    var w_s_p = w_score / (w_score+b_score);
+    var b_s_p = b_score / (w_score+b_score);
+    // if (w_s_p > 1) w_s_p = 1;
+    // if (b_s_p > 1) b_s_p = 1;
     
     var w_s_e = Math.round(w_s_p * 10);
     var b_s_e = Math.round(b_s_p * 10);
@@ -182,15 +182,14 @@ function evaluate() {
     output += '<span style="color: #f00;">White Score: ' + w_score + '[' + w_s_p.toFixed(2) + ']';
     output += '\t\t<span style="color: #f00;">Black Score: ' + b_score + '[' + (-b_s_p).toFixed(2) + ']</span>\n\n';
     
-    output += '<span style="color: #00FF00;">[Evaluation bar]:</span>\n\n';
-    for (var i = 0; i < 6; i++) output += ' ';
-    output += '(' + b_s_p.toFixed(2) + ')B';
-    output += '   W(' + w_s_p.toFixed(2) + ')\n';
-    for (var i = 0; i < b_rem; i++) output += '_';
-    for (var i = 0; i < b_s_e; i++) output += '#';
-    output += ' | ';
-    for (var i = 0; i < w_s_e; i++) output += '#';
+    output += '<span style="color: #0f0;">[Evaluation bar]:</span>\n\n';
+    output += '(' + w_s_p.toFixed(2) + ')W';
+    output += '   B(' + b_s_p.toFixed(2) + ')\n';
     for (var i = 0; i < w_rem; i++) output += '_';
+    for (var i = 0; i < w_s_e; i++) output += '#';
+    output += ' | ';
+    for (var i = 0; i < b_s_e; i++) output += '#';
+    for (var i = 0; i < b_rem; i++) output += '_';
     output += '\n-1.0                      1.0\n\n';
     
     output += '<span style="color: #0ff;">*[Approx guess]: </span>';
