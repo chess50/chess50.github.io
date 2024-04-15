@@ -214,9 +214,29 @@ function applyAnimation() {
         element.classList.add('animate-divs');
     });
 }
+function detectDeviceType() {
+    // Check if the screen width is less than or equal to a certain threshold (e.g., 768 pixels)
+    if (window.innerWidth <= 768) {
+        return 'Mobile'; // Return 'Mobile' if the screen width is smaller or equal to 768 pixels
+    } else {
+        return 'Desktop'; // Return 'Desktop' otherwise
+    }
+}
 
+window.onload = function() {
+var deviceType = detectDeviceType();
+if(deviceType=='Mobile'){
+    alert("This website is not optimized for mobile devices. Please use a desktop site for better experience.");
+    document.write('<h1 id="mobile" style="color:red;text-align: center;">If you are using Mobile Phone , please open this in "Desktop mode/site" \<br\> \<br\> Its as easy as just clicking  on three dots on top right corner and click on "Desktop site" to view the result. \<br\> \<br\>\<br\> \<br\>Its because the chessboard doesnt appears well after parsing due to spacing constraints!</h1>')
+}
+}
 
 function submitFen() {
+    var deviceType = detectDeviceType();
+if(deviceType=='Mobile'){
+    document.write('<h1 id="mobile" style="color:red;text-align: center;">If you are using Mobile Phone , please open this in "Desktop mode/site" \<br\> \<br\> Its as easy as just clicking  on three dots on top right corner and click on "Desktop site" to view the result. \<br\> \<br\>\<br\> \<br\>Its because the chessboard doesnt appears well after parsing due to spacing constraints!</h1>')
+}
+else{
     t_white=0,t_black=0;
     w_pawn=0,w_knight=0,w_bishop=0,w_rook=0;
     w_king=0,w_queen=0;
@@ -233,11 +253,11 @@ function submitFen() {
 
     console.log(fen_parse);
     FEN_PARSER(fen_parse); 
-    if(valid_fen(fen_parse)){
+    if(valid_fen(fen_parse) &&deviceType=='Desktop'){
         applyAnimation();
       
     var output = '';
-    output += '<pre style="font-size: 20px; background-color: black; color: white;">';
+    output += '<pre style="font-size: 16px; background-color: black; color: white;">';
     output += '<span style="color:#00FF00;">Parsed Result: </span>\n';
     output += '<span style="color:#00FF00;">  +---+---+---+---+---+---+---+---+</span>\n';
     for (var i = 0; i < board.length; i++) {
@@ -260,6 +280,10 @@ function submitFen() {
     evaluate();
     
 
+}
+else if(deviceType=='Mobile'){
+    alert('Please change to desktop site!!\nClick on three dots on top right corner and click on "Desktop site" to view the result.')
+}
 }
 }
 
