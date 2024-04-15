@@ -128,6 +128,10 @@ function valid_fen(fen) {
     }
 
 
+    if (slash < 7)  {invalid=true;output += '[Row]: Insufficient number of rows [<8]?\n';}
+    if (slash > 7)  {invalid=true;output += '[Row]: Row limit exceeded! [>8]?\n';}
+    if (total < 64) {invalid=true;output += '[Total]: Insufficient material!\n';}
+    if (total > 64) {invalid=true;output += '[Total]: Material limit exceeded!\n';}
 
     if (invalid) {
         output += '[Invalid piece/s]:\n';
@@ -140,11 +144,8 @@ function valid_fen(fen) {
         }
             output+= '\n';
     
-
-    if (slash < 7) output += '[Row]: Insufficient number of rows [<8]?\n';
-    if (slash > 7) output += '[Row]: Row limit exceeded! [>8]?\n';
-    if (total < 64) output += '[Total]: Insufficient material!\n';
-    if (total > 64) output += '[Total]: Material limit exceeded!\n';
+   
+    console.log("total"+total);
     alert(output);
     window.location.reload();
 }
