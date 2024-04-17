@@ -125,7 +125,7 @@ function isBlackCheck(x,y) {
         else break;
     }
     for(var i=y-1;i>=0;i--){
-        console.log("checking for rook check at "+x+" "+i)
+        // console.log("checking for rook check at "+x+" "+i)
         if(board[x][i]==='R' || board[x][i]==='Q') {console.log("Rook/queen check! returning true");return true;}
         else if(board[x][i]===' ' || board[x][i]==='k') continue;
         else break;
