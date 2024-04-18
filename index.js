@@ -38,7 +38,7 @@ function isWhiteCheck(x,y) {
             else break;
         }
         for(var i=y-1;i>=0;i--){
-            // console.log("checking for rook check at "+x+" "+i)
+            console.log("checking for rook check at "+x+" "+i)
             if(board[x][i]==='r' || board[x][i]==='q') {console.log("Rook/queen check! returning true");return true;}
             else if(board[x][i]===' ' || board[x][i]==='K') continue;
             else break;
@@ -125,7 +125,7 @@ function isBlackCheck(x,y) {
         else break;
     }
     for(var i=y-1;i>=0;i--){
-        // console.log("checking for rook check at "+x+" "+i)
+        console.log("checking for rook check at "+x+" "+i)
         if(board[x][i]==='R' || board[x][i]==='Q') {console.log("Rook/queen check! returning true");return true;}
         else if(board[x][i]===' ' || board[x][i]==='k') continue;
         else break;
@@ -155,15 +155,15 @@ function isBlackCheck(x,y) {
     }
     //check for knight checks
     // console.log("checking for knight check ")
-    if(x+2<=7 && y+1<=7 && board[x+2][y+1]==='n') {console.log("Knight check!");return true;}
-    if(x+2<=7 && y-1>=0 && board[x+2][y-1]==='n') {console.log("Knight check!");return true;}
-    if(x-2>=0 && y+1<=7 && board[x-2][y+1]==='n') {console.log("Knight check!");return true;}
-    if(x-2>=0 && y-1>=0 && board[x-2][y-1]==='n') {console.log("Knight check!");return true;}
-    if(x+1<=7 && y+2<=7 && board[x+1][y+2]==='n') {console.log("Knight check!");return true;}
-    if(x+1<=7 && y-2>=0 && board[x+1][y-2]==='n') {console.log("Knight check!");return true;}
-    if(x-1>=0 && y+2<=7 && board[x-1][y+2]==='n') {console.log("Knight check!");return true;}
-    if(x-1>=0 && y-2>=0 && board[x-1][y-2]==='n') {console.log("Knight check!");return true;}
-    // console.log("returning false reached end ")
+    if(x+2<=7 && y+1<=7 && board[x+2][y+1]==='N') {console.log("Knight check!");return true;}
+    if(x+2<=7 && y-1>=0 && board[x+2][y-1]==='N') {console.log("Knight check!");return true;}
+    if(x-2>=0 && y+1<=7 && board[x-2][y+1]==='N') {console.log("Knight check!");return true;}
+    if(x-2>=0 && y-1>=0 && board[x-2][y-1]==='N') {console.log("Knight check!");return true;}
+    if(x+1<=7 && y+2<=7 && board[x+1][y+2]==='N') {console.log("Knight check!");return true;}
+    if(x+1<=7 && y-2>=0 && board[x+1][y-2]==='N') {console.log("Knight check!");return true;}
+    if(x-1>=0 && y+2<=7 && board[x-1][y+2]==='N') {console.log("Knight check!");return true;}
+    if(x-1>=0 && y-2>=0 && board[x-1][y-2]==='N') {console.log("Knight check!");return true;}
+    console.log("returning false reached end ")
   return false;
 
     
