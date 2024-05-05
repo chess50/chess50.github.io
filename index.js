@@ -373,7 +373,7 @@ function evaluate() {
     output += ' | ';
     for (var i = 0; i < b_s_e; i++) output += '#';
     for (var i = 0; i < b_rem; i++) output += '_';
-    output += '\n-1.0                      1.0\n\n';
+    output += '\n1.0                      -1.0\n\n';
     
     output += '<span style="color: #0ff;">*[Approx guess]: </span>';
     if (w_score > b_score) output += '<span style="color: #0f0;">White is winning!</span>\n';
@@ -473,10 +473,11 @@ else{
     else if(checkmateBlack()){
         alert("Checkmate , White wins!");
     }
-    else{
+    else if(isWhiteCheck(wx,wy)){
         alert("White in check? :"+isWhiteCheck(wx,wy))
-        alert("Black in check? :"+isBlackCheck(bx,by))
-    
+    }
+    else if(isBlackCheck(bx,by)){
+       alert("Black in check? :"+isBlackCheck(bx,by))
     }
     
 
