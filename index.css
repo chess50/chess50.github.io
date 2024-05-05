@@ -17,6 +17,9 @@ body {
     animation: scaleUp 1s ease forwards;
     animation: pulse 1s ease forwards;
 }
+#header{
+    border-radius:10px;
+}
 
 h1 {
     color: #67ff1b;
