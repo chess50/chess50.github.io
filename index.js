@@ -15,7 +15,6 @@ function isLowerCase(char) {
 function isUpperCase(char) {
     return /^[A-Z]$/.test(char);
 }
-
 function isWhiteCheck(x,y) {
    
         //check for pawn checks
@@ -191,8 +190,6 @@ function checkmateBlack(){
     return legal_moves.length===0 && isBlackCheck(x,y) && board[x][y]==='k';
 
 }
-
-
 function FEN_PARSER(fen) {
     var i = 0, j = 0;
     for (var k = 0; k < fen.length; k++) {
@@ -270,18 +267,52 @@ function statistics() {
         }
     }
     // console.log(t_white)
+    var render_white=""
+    var render_black=""
     var output = '';
     output += '<pre style="font-size: 20px; background-color: black; color: white;">';
     output += '<span style="color: #00FF00;">STATISTICS</span>\n';
     output += '<span style="color:#00FF00;">-----------------------------------------</span>\n';
-    output += '<span style="color: #0000FF;">Total White Pieces: </span><span style="color: #0000FF;">' + t_white + '</span>\t\t<span style="color: #0000FF;">Total Black Pieces: </span><span style="color: #0000FF;">' + t_black + '</span>\n';
-    output += '<span style="color: #0000FF;">White Pawns: </span><span style="color: #0000FF;">' + w_pawn + '</span>\t\t\t<span style="color: #0000FF;">Black Pawns: </span><span style="color: #0000FF;">' + b_pawn + '</span>\n';
-    output += '<span style="color: #0000FF;">White Knights: </span><span style="color: #0000FF;">' + w_knight + '</span>\t\t<span style="color: #0000FF;">Black Knights: </span><span style="color: #0000FF;">' + b_knight + '</span>\n';
-    output += '<span style="color: #0000FF;">White Bishops: </span><span style="color: #0000FF;">' + w_bishop + '</span>\t\t<span style="color: #0000FF;">Black Bishops: </span><span style="color: #0000FF;">' + b_bishop + '</span>\n';
-    output += '<span style="color: #0000FF;">White Rooks: </span><span style="color: #0000FF;">' + w_rook + '</span>\t\t\t<span style="color: #0000FF;">Black Rooks: </span><span style="color: #0000FF;">' + b_rook + '</span>\n';
-    output += '<span style="color: #0000FF;">White King: </span><span style="color: #0000FF;">' + w_king + '</span>\t\t\t<span style="color: #0000FF;">Black King: </span><span style="color: #0000FF;">' + b_king + '</span>\n';
-    output += '<span style="color: #0000FF;">White Queen: </span><span style="color: #0000FF;">' + w_queen + '</span>\t\t\t<span style="color: #0000FF;">Black Queen: </span><span style="color: #0000FF;">' + b_queen + '</span>\n';
+    if(t_white>t_black) {render_white='✅'; render_black='❌';}
+    else if(t_white<t_black) {render_black='✅'; render_white='❌';}
+    else render_white=render_black='🟰';
+    output += '<span style="color: #0000FF;">Total White Pieces: </span><span style="color: #0000FF;">' + t_white + render_white+'</span>\t\t<span style="color: #0000FF;">Total Black Pieces: </span><span style="color: #0000FF;">' + t_black + render_black+'</span>\n';
+
+    
+    if(w_pawn>b_pawn) {render_white='✅'; render_black='❌';}
+    else if(w_pawn<b_pawn) {render_black='✅'; render_white='❌';}
+    else render_white=render_black='🟰';
+    output += '<span style="color: #0000FF;">White Pawns: </span><span style="color: #0000FF;">' + w_pawn + render_white+ '</span>\t\t<span style="color: #0000FF;">Black Pawns: </span><span style="color: #0000FF;">' + b_pawn + render_black + '</span>\n';
+
+
+
+    if(w_knight>b_knight) {render_white='✅'; render_black='❌';}
+    else if(w_knight<b_knight) {render_black='✅'; render_white='❌';}
+    else render_white=render_black='🟰';
+    output += '<span style="color: #0000FF;">White Knights: </span><span style="color: #0000FF;">' + w_knight +render_white+ '</span>\t\t<span style="color: #0000FF;">Black Knights: </span><span style="color: #0000FF;">' + b_knight + render_black+ '</span>\n';
+
+    if(w_bishop>b_bishop) {render_white='✅'; render_black='❌';}
+    else if(w_bishop<b_bishop) {render_black='✅'; render_white='❌';}
+    else render_white=render_black='🟰';
+    output += '<span style="color: #0000FF;">White Bishops: </span><span style="color: #0000FF;">' + w_bishop +render_white+ '</span>\t\t<span style="color: #0000FF;">Black Bishops: </span><span style="color: #0000FF;">' + b_bishop +render_black+ '</span>\n';
+
+    if(w_rook>b_rook) {render_white='✅'; render_black='❌';}
+    else if(w_rook<b_rook) {render_black='✅'; render_white='❌';}
+    else render_white=render_black='🟰';
+    output += '<span style="color: #0000FF;">White Rooks: </span><span style="color: #0000FF;">' + w_rook +render_white+ '</span>\t\t<span style="color: #0000FF;">Black Rooks: </span><span style="color: #0000FF;">' + b_rook + render_black+'</span>\n';
+
+    if(w_queen>b_queen) {render_white='✅'; render_black='❌';}
+    else if(w_queen<b_queen) {render_black='✅'; render_white='❌';}
+    else render_white=render_black='🟰';
+
+    output += '<span style="color: #0000FF;">White Queen: </span><span style="color: #0000FF;">' + w_queen +render_white+ '</span>\t\t<span style="color: #0000FF;">Black Queen: </span><span style="color: #0000FF;">' + b_queen + render_black+'</span>\n';
     output += '</pre>';
+    if(checkmateBlack() && b_king && w_king) {render_white='🏆'; render_black='❓';}
+    else if(checkmateWhite() && b_king && w_king) {render_black='🏆'; render_white='❓';}
+    else render_white=render_black='👑';
+    output += '<span style="color: #0000FF;">White King: </span><span style="color: #0000FF;">' + w_king +render_white+ '---------------</span>\t\t\t<span style="color: #0000FF;">Black King: </span><span style="color: #0000FF;">' + b_king +render_black+ '</span>\n';
+
+
 
     document.getElementById('statistics').innerHTML = output;
 }
@@ -335,7 +366,6 @@ function valid_fen(fen) {
 
     return (slash === 7 && total === 64 && !invalid);
 }
-
 function evaluate() {
     var w_score = 0, b_score = 0;
     w_score += w_pawn * 1;
@@ -384,8 +414,6 @@ function evaluate() {
     
     document.getElementById('evaluation').innerHTML = output;
 }
-
-
 function applyAnimation() {
     const elements = document.querySelectorAll('#chessboard, #statistics, #evaluation');
     elements.forEach(element => {
@@ -405,7 +433,6 @@ function detectDeviceType() {
         return 'Desktop'; // Return 'Desktop' otherwise
     }
 }
-
 window.onload = function() {
 var deviceType = detectDeviceType();
 if(deviceType=='Mobile'){
@@ -413,7 +440,16 @@ if(deviceType=='Mobile'){
     document.write('<h1 id="mobile" style="color:red;text-align: center;">If you are using Mobile Phone , please open this in "Desktop mode/site" \<br\> \<br\> Its as easy as just clicking  on three dots on top right corner and click on "Desktop site" to view the result. \<br\> \<br\>\<br\> \<br\>Its because the chessboard doesnt appears well after parsing due to spacing constraints!</h1>')
 }
 }
-
+// function tempAlert(msg,duration)
+// {
+//  var el = document.createElement("div");
+//  el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
+//  el.innerHTML = msg;
+//  setTimeout(function(){
+//   el.parentNode.removeChild(el);
+//  },duration);
+//  document.body.appendChild(el);
+// }
 function submitFen() {
     var deviceType = detectDeviceType();
 if(deviceType=='Mobile'){
@@ -466,11 +502,14 @@ else{
         }
     statistics();
     evaluate();
+    if(b_king==0) alert("Black King is missing! Please check the FEN string again!\n @proceeding to still parse the fen string despite errors! \n [CLICK OK TO PROCEED]");
+    if(w_king==0) alert("White King is missing! Please check the FEN string again!\n @proceeding to still parse the fen string despite errors! \n [CLICK OK TO PROCEED]");
+    // if(b_king==0 || w_king==0) tempAlert(`${b_king==0?'Black ':''} ${w_king==0?'White ':''}King is missing! Please check the FEN string again!`,3000);
     // console.log(isBlackCheck(bx,by))
-    if(checkmateWhite()){
+    if(checkmateWhite() && w_king && b_king){
         alert("Checkmate , Black wins!");
     }
-    else if(checkmateBlack()){
+    else if(checkmateBlack() && b_king && w_king){
         alert("Checkmate , White wins!");
     }
     else if(isWhiteCheck(wx,wy)){
@@ -487,4 +526,3 @@ else if(deviceType=='Mobile'){
 }
 }
 }
-
