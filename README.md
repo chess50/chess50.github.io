@@ -33,5 +33,9 @@ For more information about FEN notation, you can visit the [Wikipedia page](http
 
 ## Credits
 
-This project was created by **MOHAMMED ABDULLAH**.
+This project was created by **MOHAMMED ABDULLAH**  
+
+*[U can see my other projects at (https://github.com/abdullah798155)].*
+
+**Personal Github Username:** *@abdullah798155*
 
