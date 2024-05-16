@@ -5,8 +5,9 @@ Chess Board Analyzer is a web application that allows users to input [Forsyth–
 ## Features
 
 - **FEN Input:** Users can input FEN strings representing chess positions.
+- **Parsed Chessboard** Users can see a 2D Chess board which is initialized as per the FEN string provided.
 - **Statistics:** The application provides statistics about the total number of pieces on the board and the count of each type of piece for both white and black.
-- **Evaluation:** It evaluates the current position and provides an approximate assessment of which side has the advantage.
+- **Evaluation:** It evaluates the current position and provides an approximate assessment of which side has the advantage with an evaluation bar.
 - **Mobile Compatibility:** The application is optimized for desktop use, but it provides a warning message for mobile users to switch to desktop mode for better experience.
 
 ## Usage
