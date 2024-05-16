@@ -28,5 +28,5 @@ For more information about FEN notation, you can visit the [Wikipedia page](http
 
 ## Credits
 
-This project was created by **MOHAMMED ABDULLAH**. It utilizes HTML, CSS, and JavaScript.
+This project was created by **MOHAMMED ABDULLAH**.
 
