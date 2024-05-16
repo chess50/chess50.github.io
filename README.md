@@ -2,6 +2,10 @@
 
 Chess Board Analyzer is a web application that allows users to input [Forsyth–Edwards Notation (FEN)](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) strings representing chess positions and analyze them. The application provides statistics about the pieces on the board and evaluates the position to determine which side has the advantage.
 
+The website is currently live [here](https://chess50.github.io) <img src="https://media.tenor.com/yjOrdcOkLPUAAAAi/green-dot.gif" alt="Live" width="30" height="30" >
+
+@ (https://chess50.github.io)
+
 ## Features
 
 - **FEN Input:** Users can input FEN strings representing chess positions.
