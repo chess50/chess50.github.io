@@ -12,6 +12,7 @@ The website is currently live [here](https://chess50.github.io) <img src="https:
 - **Parsed Chessboard:** Users can see a 2D Chess board which is initialized as per the FEN string provided.
 - **Statistics:** The application provides statistics about the total number of pieces on the board and the count of each type of piece for both white and black.
 - **Evaluation:** It evaluates the current position and provides an approximate assessment of which side has the advantage with an evaluation bar.
+- **Checks & Checkmate:** It also displays whether any of the kings are in check or not , it can also detect Checkmates! .
 - **Mobile Compatibility:** The application is optimized for desktop use, but it provides a warning message for mobile users to switch to desktop mode for better experience.
 
 ## Usage
@@ -38,4 +39,6 @@ This project was created by **MOHAMMED ABDULLAH**
 *[U can see my other projects at (https://github.com/abdullah798155)].*
 
 **Personal Github Username:** *@abdullah798155*
+
+**BuyMeACoffee ☕:** [@Click here!](https://buymeacoffee.com/abdullah79g)
 
