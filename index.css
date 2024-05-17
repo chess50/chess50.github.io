@@ -20,6 +20,10 @@ body {
 #header{
     border-radius:10px;
 }
+#footers{
+    animation: scaleUp 1s ease forwards;
+    /* animation: pulse 1s ease forwards; */
+}
 
 h1 {
     color: #67ff1b;
