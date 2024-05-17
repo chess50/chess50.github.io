@@ -15,6 +15,19 @@ The website is currently live [here](https://chess50.github.io) <img src="https:
 - **Checks & Checkmate:** It also displays whether any of the kings are in check or not , it can also detect Checkmates! .
 - **Mobile Compatibility:** The application is optimized for desktop use, but it provides a warning message for mobile users to switch to desktop mode for better experience.
 
+ ## Interface
+
+ ![image](https://github.com/chess50/chess50.github.io/assets/167095253/c186a7f9-c386-4341-aa6f-7db7e65c9191)
+
+  
+ ## Examples
+  
+ ![image](https://github.com/chess50/chess50.github.io/assets/167095253/1f3bb4cf-dc4e-4469-bb66-57346389e599)
+ ![image](https://github.com/chess50/chess50.github.io/assets/167095253/de525a05-6ec7-42a8-88c8-3c0950ce4704)
+
+
+
+
 ## Usage
 
 To use the Chess Board Analyzer:
