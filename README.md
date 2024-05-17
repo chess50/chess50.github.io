@@ -17,7 +17,8 @@ The website is currently live [here](https://chess50.github.io) <img src="https:
 
  ## Interface
 
- ![image](https://github.com/chess50/chess50.github.io/assets/167095253/ba2a95b0-bc0e-4443-b4bd-f3ab9bbc5988)
+ ![inter-gif](https://github.com/chess50/chess50.github.io/assets/167095253/58e579b0-8b2a-4fee-b2f4-9270da7b7d78)
+
 
 
   
